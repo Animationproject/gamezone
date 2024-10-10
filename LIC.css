@@ -1,0 +1,250 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #1a1a1a, #333, #444, #555);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 15s ease infinite;
+    color: #fff;
+}
+
+/* Header Section (Navbar) */
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: -80px; /* Initially off-screen */
+    left: 0;
+    right: 0;
+    animation: slideDown 1s ease forwards; /* Slide-in animation */
+    z-index: 1000;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.4s ease, transform 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgb(243, 149, 17);
+    left: 50%;
+    bottom: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: rgb(145, 249, 10);
+	border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/* Slide-down animation for navbar */
+@keyframes slideDown {
+    from {
+        top: -80px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+
+/* Banner Section */
+.banner {
+    background-image: url('mrx.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 1s ease;
+}
+
+.banner:hover {
+    background-color: rgba(49, 21, 21, 0.5);
+}
+
+/* Text Animations in Banner */
+.banner h2 {
+    font-size: 48px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+.banner p {
+    font-size: 24px;
+    opacity: 0;
+    animation: fadeIn 2s ease 0.5s forwards; /* Delayed by 0.5s */
+}
+
+/* Play Now Button */
+button#play-now {
+    padding: 15px 30px;
+    background-color: rgb(232, 124, 16);
+    border: none;
+	border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#play-now:hover {
+    background-color: #e70;
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(255, 136, 0, 0.6);
+}
+
+/* News Section */
+#news {
+    padding: 20px;
+    background-color: #2f2f2f;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-item {
+    background-color: #333;
+    padding: 15px;
+    width: 45%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 3s ease forwards;
+}
+
+.news-item:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.news-item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+/* Gameplay Tips */
+#gameplay {
+    padding: 20px;
+}
+
+#gameplay ul {
+    list-style: none;
+    padding: 0;
+}
+
+#gameplay ul li {
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+#gameplay ul li:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+#gameplay ul li:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#gameplay ul li:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+header {
+    position: fixed;
+    top: -80px; /* Initially off-screen */
+    left: 0;
+    right: 0;
+    animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        top: -80px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
